@@ -1,7 +1,7 @@
 
 
 #### [Ditto](https://github.com/measured/shiny-ditto) is transforming into...
-# Dwebpack
+# Dwebble
 
 > Ditto (Japanese: メタモン *Metamon*) is a Normal-type Pokémon that uses the move `Transform` to copy the opponent's moves, types, form, and non-HP stats.
 

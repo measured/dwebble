@@ -1,5 +1,5 @@
 {
-  "name": "dwebpack",
+  "name": "dwebble",
   "version": "0.0.0",
   "description": "shiny-ditto transformed into a webpack workflow",
   "main": "app/app.js",
