@@ -1,4 +1,4 @@
-module.exports = require("./make-webpack-config")({
+module.exports = require("../make-webpack-config")({
 	hot: true,
 	devServer: true,
 	hotComponents: true,

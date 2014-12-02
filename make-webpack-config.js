@@ -6,7 +6,7 @@ var joinEntry = require("./config/joinEntry");
 
 module.exports = function(options) {
 	var entry = {
-		main: reactEntry("Main")
+		main: reactEntry("App")
 		// second: reactEntry("Second")
 	};
 	var loaders = {
@@ -15,19 +15,17 @@ module.exports = function(options) {
 		"json": "json-loader",
 		"json5": "json5-loader",
 		"txt": "raw-loader",
-		"png|jpg|jpeg|gif|svg": "url-loader?limit=10000",
+		"png|jpg|jpeg|gif": "url-loader?limit=10000",
 		"woff": "url-loader?limit=100000",
 		"ttf|eot": "file-loader",
 		"wav|mp3": "file-loader",
 		"html": "html-loader",
 		"md|markdown": ["html-loader", "markdown-loader"],
+		"svg": "raw-loader"
 	};
 	var stylesheetLoaders = {
-		"css": "css-loader",
-		"less": "css-loader!less-loader",
-		"styl": "css-loader!stylus-loader",
-		"sass": "css-loader!sass-loader",
-		"scss": "css-loader!sass-loader",
+		"css": "css-loader!autoprefixer",
+		"sass|scss": "css-loader!autoprefixer!sass-loader"
 	}
 	var additionalLoaders = [
 		// { test: /some-reg-exp$/, loader: "any-loader" }
@@ -57,7 +55,7 @@ module.exports = function(options) {
 		function() {
 			if(!options.prerender) {
 				this.plugin("done", function(stats) {
-					require("fs").writeFileSync(path.join(__dirname, "build", "stats.json"), JSON.stringify(stats.toJson({
+					require("fs").writeFileSync(path.join(__dirname, "config", "stats.json"), JSON.stringify(stats.toJson({
 						chunkModules: true,
 						exclude: [
 							/node_modules[\\\/]react/
@@ -80,7 +78,7 @@ module.exports = function(options) {
 
 
 	function reactEntry(name) {
-		return (options.prerender ? "./config/prerender?" : "./config/app?") + name;
+		return (options.prerender ? "./config/prerender?" : "./app/App?") + name;
 	}
 	if(options.devServer) {
 		if(options.hot) {
