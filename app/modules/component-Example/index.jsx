@@ -1,4 +1,6 @@
 
+
+require('./_index.css')
 require('./_index.scss')
 var React = require('react')
 

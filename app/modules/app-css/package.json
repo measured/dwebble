@@ -2,7 +2,7 @@
   "name": "app-css",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "_boilerplate.scss",
   "style": "_boilerplate.scss",
   "author": "",
   "license": "GPL-3.0"

@@ -24,11 +24,10 @@ module.exports = function(options) {
 		"svg": "raw-loader"
 	};
 	var stylesheetLoaders = {
-		"css": "css-loader!autoprefixer",
-		"sass|scss": "css-loader!autoprefixer!sass-loader"
+		"css": "css-loader!autoprefixer"
 	}
 	var additionalLoaders = [
-		// { test: /some-reg-exp$/, loader: "any-loader" }
+		{ test: /\.scss$/, loader: 'style!css!sass' }
 	];
 	var alias = {
 
@@ -117,7 +116,7 @@ module.exports = function(options) {
 		output: output,
 		target: options.prerender ? "node" : "web",
 		module: {
-			loaders: loadersByExtension(loaders).concat(loadersByExtension(stylesheetLoaders))
+			loaders: loadersByExtension(loaders).concat(loadersByExtension(stylesheetLoaders)).concat(additionalLoaders)
 		},
 		devtool: options.devtool,
 		debug: options.debug,
