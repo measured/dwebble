@@ -7,8 +7,12 @@ var joinEntry = require("./config/joinEntry");
 module.exports = function(options) {
 	var entry = {
 		main: reactEntry("App")
-		// second: reactEntry("Second")
 	};
+	var modulesDirectories = [
+		"web_modules",
+		"node_modules",
+		"./app/modules"
+	];
 	var loaders = {
 		"coffee": "coffee-redux-loader",
 		"jsx": options.hotComponents ? ["react-hot-loader", "jsx-loader?harmony"] : "jsx-loader",
@@ -38,7 +42,6 @@ module.exports = function(options) {
 	var externals = [
 
 	];
-	var modulesDirectories = ["web_modules", "node_modules", "./app/modules"];
 	var extensions = ["", ".web.js", ".js", ".jsx"];
 	var root = path.join(__dirname, "app");
 	var output = {
