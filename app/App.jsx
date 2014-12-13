@@ -9,7 +9,7 @@ var React = require("react")
 var Router = require("react-router")
 
 // render top-level react component
-var Example = require("./modules/component-Example")
+var Example = require("component-Example")
 
 var Application = React.createClass({
 	render: function() {

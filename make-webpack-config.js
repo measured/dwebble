@@ -38,7 +38,7 @@ module.exports = function(options) {
 	var externals = [
 
 	];
-	var modulesDirectories = ["web_modules", "node_modules"];
+	var modulesDirectories = ["web_modules", "node_modules", "./app/modules"];
 	var extensions = ["", ".web.js", ".js", ".jsx"];
 	var root = path.join(__dirname, "app");
 	var output = {
