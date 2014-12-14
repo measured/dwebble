@@ -6,7 +6,7 @@
 
 ## U wot m8?
 
-Dwebble is a starting point for making serious single page apps. It uses webpack as a module system, react for views and sass for style. For a more opinionated front-end stack boilerplate - Dwebble evolves into [Crustle](https://github.com/measured/crustle) starting at level 34.
+Dwebble is a starting point for making serious single page apps. It uses webpack as a module system, react for views and sass for style. For an even more opinionated front-end boilerplate - Dwebble evolves into [Crustle](https://github.com/measured/crustle) starting at level 34.
 
 ## Installation
 
