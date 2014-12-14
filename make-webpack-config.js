@@ -28,10 +28,11 @@ module.exports = function(options) {
 		"svg": "raw-loader"
 	};
 	var stylesheetLoaders = {
-		"css": "css-loader!autoprefixer"
+		"css": "css-loader!autoprefixer",
+		"sass|scss": "css-loader!autoprefixer!sass-loader"
 	}
 	var additionalLoaders = [
-		{ test: /\.scss$/, loader: 'style!css!sass' }
+
 	];
 	var alias = {
 
